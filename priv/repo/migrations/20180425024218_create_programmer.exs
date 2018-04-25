@@ -9,6 +9,7 @@ defmodule RailsShop.Repo.Migrations.CreateProgrammer do
       add :speed, :integer
       add :quality, :integer
       add :verboseness, :integer
+      add :planning, :integer
 
       timestamps()
     end

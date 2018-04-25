@@ -7,11 +7,11 @@ defmodule RailsShop.Repo.Migrations.CreateFeature do
       add :feature_difficulty, :float
       add :discovered_value, :float
       add :discovered_difficulty, :float
-      add :codebase_id, references(:codebase, on_delete: :nothing)
+      add :module_id, references(:module, on_delete: :nothing)
 
       timestamps()
     end
 
-    create index(:features, [:codebase_id])
+    create index(:features, [:module_id])
   end
 end

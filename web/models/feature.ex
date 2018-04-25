@@ -6,7 +6,7 @@ defmodule RailsShop.Feature do
     field :feature_difficulty, :float
     field :discovered_value, :float
     field :discovered_difficulty, :float
-    belongs_to :codebase, RailsShop.Codebase, foreign_key: :codebase_id
+    belongs_to :module, RailsShop.Module, foreign_key: :module_id
 
     timestamps()
   end
