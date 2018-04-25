@@ -4,10 +4,11 @@ defmodule RailsShop.Line do
   schema "lines" do
     field :text, :string
     field :quality, :float
-    field :feature_value, :float
+    field :line_value, :float
     belongs_to :module, RailsShop.Module, foreign_key: :module_id
+    belongs_to :feature, RailsShop.Feature, foreign_key: :feature_id
     belongs_to :writer, RailsShop.Writer, foreign_key: :writer_id
-    belongs_to :function_call, RailsShop.FunctionCall, foreign_key: :function_call_id
+    belongs_to :next_line, RailsShop.Line, foreign_key: :next_line_id
 
     timestamps()
   end
@@ -17,7 +18,7 @@ defmodule RailsShop.Line do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:text, :quality, :feature_value])
-    |> validate_required([:text, :quality, :feature_value])
+    |> cast(params, [:text, :quality, :line_value])
+    |> validate_required([:text, :quality, :line_value])
   end
 end

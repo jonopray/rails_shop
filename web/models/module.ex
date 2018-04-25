@@ -16,4 +16,8 @@ defmodule RailsShop.Module do
     |> cast(params, [:name])
     |> validate_required([:name])
   end
+
+  def display
+    # load lines and print
+  end
 end
